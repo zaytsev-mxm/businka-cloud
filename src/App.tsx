@@ -1,3 +1,5 @@
+import { Cat } from './components/Cat/Cat';
+
 export const App = () => {
-  return <div>Hello World!</div>;
+  return <Cat />;
 };
