@@ -1,4 +1,4 @@
-import { Cat } from './components/Cat/Cat';
+import { Cat } from '@/components/Cat/Cat';
 
 export const App = () => {
   return <Cat />;

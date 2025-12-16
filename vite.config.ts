@@ -15,7 +15,7 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [react(), tsconfigPaths({ projects: ['./tsconfig.app.json'] })],
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
