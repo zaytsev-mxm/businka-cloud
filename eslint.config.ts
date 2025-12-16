@@ -3,6 +3,7 @@ import js from '@eslint/js';
 import json from '@eslint/json';
 import eslintConfigPrettier from 'eslint-config-prettier/flat';
 import pluginReact from 'eslint-plugin-react';
+import storybook from 'eslint-plugin-storybook';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -28,7 +29,12 @@ export default defineConfig([
     },
   },
   {
-    ignores: ['**/package-lock.json', '**/tsconfig*.json'],
+    ignores: [
+      '**/package-lock.json',
+      '**/tsconfig*.json',
+      'dist/**',
+      'coverage/**',
+    ],
   },
   {
     files: ['**/*.json'],
@@ -46,4 +52,6 @@ export default defineConfig([
     },
   },
   eslintConfigPrettier,
+  // @ts-expect-error - storybook plugin types are incompatible with defineConfig
+  ...storybook.configs['flat/recommended'],
 ]);
