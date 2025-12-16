@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+
 import s from './Greetings.module.scss';
 
 type Props = {
